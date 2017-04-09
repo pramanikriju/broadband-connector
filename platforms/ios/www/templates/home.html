@@ -1,0 +1,32 @@
+<ion-view title="Home" id="page1">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button icon No Icon"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <h1 id="home-heading1" style="color:#4C5C96;text-align:center;">NetConnect</h1>
+    <form id="home-form1" class="list">
+      <label class="item item-input" id="home-input2">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="Enter Username">
+      </label>
+      <label class="item item-input" id="home-input5">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Enter Password">
+      </label>
+      <label class="item item-select" id="home-select1">
+        <span class="input-label">Broadband</span>
+        <select>
+          <option>WishNet</option>
+        </select>
+      </label>
+    </form>
+    <form id="home-form2" class="list">
+      <ion-toggle toggle-class="toggle-positive" id="home-toggle1">Save Info</ion-toggle>
+    </form>
+    <a ui-sref="menu.connection" id="home-button1" class="button button-positive  button-block">Connect</a>
+    <div class="spacer" style="width: 300px; height: 27px;"></div>
+    <div id="home-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">© 2017 Riju Pramanik</p>
+    </div>
+  </ion-content>
+</ion-view>
