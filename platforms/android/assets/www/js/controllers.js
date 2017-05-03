@@ -1,8 +1,8 @@
 angular.module('app.controllers', [])
   
-.controller('homeCtrl', ['$scope', '$http' ,'$cordovaInAppBrowser','$rootScope',
+.controller('homeCtrl', ['$scope', '$http' ,'$cordovaInAppBrowser','$rootScope','$state',
 
-function ($scope,$http,$cordovaInAppBrowser,$rootScope) {
+function ($scope,$http,$cordovaInAppBrowser,$rootScope,$state) {
       $scope.network = {
        'username'  : '',
        'password'  : '',
@@ -16,12 +16,13 @@ function ($scope,$http,$cordovaInAppBrowser,$rootScope) {
       toolbar: 'no'
    };
    
-
+//state-name menu.home
      $scope.submit = function() {
       var str1 = $scope.network.username;
       var str2 = $scope.network.password;
       var url1= "http://1.1.1.1/login1.html?a=%3F"+ str1 + "%2B%2F%40&b=%3F"+ str2+ "%2B%2F%40";
       console.log(url1);
+      
 
 
 //connection logic
@@ -104,10 +105,10 @@ function ($scope, $stateParams) {
 
 }])
    
-.controller('donateCtrl', ['$scope', '$stateParams','$cordovaInAppBrowser',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('donateCtrl', ['$scope', '$stateParams','$cordovaInAppBrowser','$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams,$cordovaInAppBrowser) {
+function ($scope, $stateParams,$cordovaInAppBrowser,$state) {
   
 
    var options = {
@@ -115,8 +116,12 @@ function ($scope, $stateParams,$cordovaInAppBrowser) {
       clearcache: 'yes',
       toolbar: 'no'
    };
+   
 
    $scope.openBrowser = function() {
+       $scope.currState = $state;
+   var currentState = $state.current.name; 
+   console.log(currentState);
       $cordovaInAppBrowser.open('https://www.payumoney.com/paybypayumoney/#/88C22ED3FFE5FFCA0444859F06FEA10E', '_blank', options)
 		
       .then(function(event) {

@@ -16,8 +16,12 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
 .run(function($ionicPlatform) {
    
-  $ionicPlatform.registerBackButtonAction(function(){
-  event.preventDefault();
+ $ionicPlatform.registerBackButtonAction(function(){
+  if($ionicHistory.currentStateName === 'menu.connection' || 'menu.donate' || 'menu.about'){
+    event.preventDefault();
+  }else{
+    $ionicHistory.goBack();
+  }
 }, 100);
 
 

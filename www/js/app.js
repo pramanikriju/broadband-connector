@@ -20,7 +20,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
   if($ionicHistory.currentStateName === 'menu.connection' || 'menu.donate' || 'menu.about'){
     event.preventDefault();
   }else{
-    $ionicHistory.goBack();
+    $location.path('/side-menu21/page1');
   }
 }, 100);
 

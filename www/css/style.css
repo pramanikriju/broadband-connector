@@ -6,3 +6,7 @@ donate{
      padding-top:50px;
      padding-top: 100px;
 }
+.loader-bg{
+    background:url(/img/load.gif) center center no-repeat;
+    height: 100%;
+}
